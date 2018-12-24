@@ -4,8 +4,15 @@
   "description": "",
   "main": "\u001b[A\u001b[B",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "8.11.2"
+  },
   "author": "Offiah Chiazor",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
