@@ -12,7 +12,7 @@
     </style>
     
 </head>
-<body>
+<body >
         
     <nav class="navbar navbar-dark fixed-top  bg-dark">
         <a class="navbar-brand" style="color:white;">Home</a>
@@ -37,11 +37,11 @@
                         <div class="card" style="width: 18rem;">
                             <img src="<%= country.flag %>" class="card-img-top" style="height: 191px;" alt="...">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Name</strong> <span style="text-align: left;"><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
-                                <li class="list-group-item"><strong>Capital</strong> <span style="text-align: right;"><%= country.capital %></span></li>
-                                <li class="list-group-item"><strong>Currency</strong> <span style="text-align: right;"><%= country.currencies[0].name %> (<%= country.currencies[0].symbol %>)</span></li>
-                                <li class="list-group-item"><strong>Population</strong> <span style="text-align: right;"><%= country.population %></span></li>
-                                <li class="list-group-item"><a href="#" class="btn btn-primary">KNOW MORE</a></li>
+                                <li class="list-group-item"><strong>Name</strong> <span><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
+                                <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
+                                <li class="list-group-item"><strong>Currency</strong> <span><%= country.currencies[0].name %> (<%= country.currencies[0].symbol %>)</span></li>
+                                <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
+                                <li class="list-group-item"><a href="#" class="btn btn-info">KNOW MORE</a></li>
                             </ul>
                         </div>
                     </div>
