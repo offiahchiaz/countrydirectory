@@ -1,0 +1,19 @@
+.navbar-brand { 
+    color: #fff;
+}
+.col-sm-4 { 
+    margin-bottom: 20px; 
+}
+.card {
+    width: 18rem;
+}
+.card-img-top{
+    height: 191px;
+}
+.list-group-item {
+    background-color: #e9ecef;
+}
+span {
+    margin-right: 10px;
+    float: right;
+}

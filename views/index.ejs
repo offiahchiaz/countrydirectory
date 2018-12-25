@@ -6,21 +6,13 @@
     <title>Country Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap.min.css">
-
-    <style>
-        .list-group-item {
-            background-color: #e9ecef;
-        }
-        .col-sm-4 {
-            
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
     
 </head>
 <body >
         
     <nav class="navbar navbar-dark fixed-top  bg-dark">
-        <a class="navbar-brand" style="color:white;">Home</a>
+        <a class="navbar-brand" style="color: #fff;">Home</a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -38,13 +30,13 @@
         <% if(data !== null){ %>
             <div class="row">
                 <% data.forEach(function(country){ %>
-                    <div class="col-sm-4" style="margin-bottom: 20px;">
-                        <div class="card" style="width: 18rem;">
-                            <img src="<%= country.flag %>" class="card-img-top" style="height: 191px;" alt="...">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img src="<%= country.flag %>" class="card-img-top"  alt="country flag">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong>Name</strong> <span><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
                                 <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
-                                <li class="list-group-item"><strong>Currency</strong> <span><%= country.currencies[0].name %> (<%= country.currencies[0].symbol %>)</span></li>
+                                <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
                                 <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
                                 <li class="list-group-item"><a href="#" class="btn btn-info">KNOW MORE</a></li>
                             </ul>
