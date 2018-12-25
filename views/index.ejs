@@ -6,16 +6,47 @@
     <title>Country Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/bootstrap.min.css">
+
+    <style>
+
+    </style>
     
 </head>
 <body>
+        
+    <nav class="navbar navbar-dark fixed-top  bg-dark">
+        <a class="navbar-brand" style="color:white;">Home</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Countries directory</h1>
+            <p class="lead">This is a minimal directory for countries, displaying some key infos of displayed countries.</p>
+        </div>
+    </div>
+     
     <div class="container">
         <% if(data !== null){ %>
             <div class="row">
                 <% data.forEach(function(country){ %>
-                    <div class="col-md-3"> <%= country.name %>  <%= country.alpha2Code %> </div>
+                    <div class="col-sm-4" style="margin-bottom: 20px;">
+                        <div class="card" style="width: 18rem;">
+                            <img src="<%= country.flag %>" class="card-img-top" style="height: 191px;" alt="...">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Name</strong> <span style="text-align: left;"><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
+                                <li class="list-group-item"><strong>Capital</strong> <span style="text-align: right;"><%= country.capital %></span></li>
+                                <li class="list-group-item"><strong>Currency</strong> <span style="text-align: right;"><%= country.currencies[0].name %> (<%= country.currencies[0].symbol %>)</span></li>
+                                <li class="list-group-item"><strong>Population</strong> <span style="text-align: right;"><%= country.population %></span></li>
+                                <li class="list-group-item"><a href="#" class="btn btn-primary">KNOW MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 <% }) %>
-                </div>
+            </div>
         <% } %>    
     
         <% if(error !== null){ %>
@@ -24,6 +55,7 @@
             
     </div>
     
+   
     <script src="/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
