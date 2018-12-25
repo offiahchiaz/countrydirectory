@@ -2,11 +2,12 @@ const path = require('path');
 const express = require('express');
 const request = require('request');
 
-//const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 4000; 
 const app = express();      
-  
-app.set('view engine', 'ejs');   
+ 
+app.use(express.static(publicPath));
+app.set('view engine', 'ejs');    
   
 app.get('/', function (req, res) {     
  
@@ -20,8 +21,6 @@ app.get('/', function (req, res) {
         }
     });  
 });
-
-//app.use(express.static(publicPath));
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
