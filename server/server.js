@@ -3,12 +3,12 @@ const express = require('express');
 const request = require('request');
 
 //const publicPath = path.join(__dirname, '../public');
-const port = process.env.PORT || 4000;
-const app = express();    
- 
+const port = process.env.PORT || 4000; 
+const app = express();      
+  
 app.set('view engine', 'ejs');   
-
-app.get('/', function (req, res) {   
+  
+app.get('/', function (req, res) {     
  
     const url = 'https://restcountries.eu/rest/v2/all';
     request(url, function (err, response, body) { 

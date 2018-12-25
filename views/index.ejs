@@ -10,15 +10,12 @@
 <body>
 
     <% if(data !== null){ %>
-        <p><%= data %></p>
-    <% } %>
-
-    <ul>
-        <%= data.forEach(function(country){ %>
-            <li> <%= country.name %>  <%= country.alpha2Code %> </li>
-        <% }) %>
-    
-    </ul>
+        <ul>
+            <% data.forEach(function(country){ %>
+                <li> <%= country.name %>  <%= country.alpha2Code %> </li>
+            <% }) %>
+        </ul>
+    <% } %>    
 
     <% if(error !== null){ %>
         <p><%= error %></p>
