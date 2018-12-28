@@ -38,7 +38,7 @@
                                 <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
                                 <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
                                 <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
-                                <li class="list-group-item"><a href="#" class="btn btn-info">KNOW MORE</a></li>
+                                <li class="list-group-item"><a href="<%= country.name %>" class="btn btn-info">KNOW MORE</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,7 +49,6 @@
         <% if(error !== null){ %>
             <p><%= error %></p>
         <% } %>
-            
     </div>
     
    
