@@ -10,22 +10,8 @@
     
 </head>
 <body >
-        
-    <nav class="navbar navbar-dark fixed-top  bg-dark">
-        <a class="navbar-brand" style="color: #fff;">Home</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
+    <% include ./partials/header %>
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Countries directory</h1>
-            <p class="lead">This is a minimal directory for countries, displaying some key infos of displayed countries.</p>
-        </div>
-    </div>
-     
     <div class="container">
         <% if(data !== null){ %>
             <div class="row">
@@ -51,6 +37,7 @@
         <% } %>
     </div>
     
+    <% include ./partials/footer %>
    
     <script src="/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>

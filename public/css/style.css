@@ -17,3 +17,7 @@ span {
     margin-right: 10px;
     float: right;
 }
+footer {
+    text-align: center;
+    background-color: #e9ecef;
+}
