@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
         } else {
             let data = JSON.parse(body);
             res.render('index', {data: data, error: null}); 
-            console.log(data.length) //250;
+            //console.log('Number of countries', data.length); //250;
         }
     });  
 });
@@ -32,7 +32,7 @@ app.get('/:name', function (req, res) {
         } else {
             let data = JSON.parse(body);
             res.render('country', {data: data, error: null}); 
-            console.log(data.length) //250;
+            //console.log('Number of country', data.length)
         }
     });
 });

@@ -10,7 +10,35 @@
     
 </head>
 <body>
-    <p>country</p>
+    
+    <% include ./partials/header %>
+
+    <div class="container">
+        <% if(data !== null){ %>
+            <div class="row">
+                <% data.forEach(function(country){ %>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img src="<%= country.flag %>" class="card-img-top"  alt="country flag">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Name</strong> <span><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
+                                <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
+                                <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
+                                <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
+                                <li class="list-group-item"><a href="<%= country.name %>" class="btn btn-info">KNOW MORE</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>    
+    
+        <% if(error !== null){ %>
+            <p><%= error %></p>
+        <% } %>
+    </div>
+    
+    <% include ./partials/footer %>
 
     <script src="/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
