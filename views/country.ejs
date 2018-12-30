@@ -12,7 +12,8 @@
 <body>
     
     <% include ./partials/header %>
-
+    <% include ./partials/formatNumber %>
+    
     <div class="album py-5 bg-light">
         <div class="container">
             <% if(data !== null){ %>
@@ -28,15 +29,27 @@
                                 <!-- <img src="<%= country.flag %>" class="card-img-top"  alt="country flag"> -->
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><strong>Name</strong> <span><%= (country.name).substring(0, 20) %> (<%= country.alpha2Code %>)</span> </li>
+                                            <li class="list-group-item"><strong>Name</strong> <span><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
                                             <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
-                                            <li class="list-group-item"><strong>Citizen</strong> <span><%= country.demonym %></span></li>
-                                            <li class="list-group-item"><strong>Calling codes</strong> <span><%= country.callingCodes %></span></li>
+                                            <li class="list-group-item"><strong>Demonym</strong> <span><%= country.demonym %></span></li>
+                                            <li class="list-group-item"><strong>Calling codes</strong> <span>+<%= country.callingCodes %></span></li>
                                             <li class="list-group-item"><strong>Time zone</strong> <span><%= country.timezones %></span></li>
-                                            <li class="list-group-item"><strong>Currencies</strong> <span><%= country.currencies %></span></li>
-                                            <li class="list-group-item"><strong>Languages</strong> <span><%= country.languages %></span></li>
-                                            <li class="list-group-item"><strong>Area</strong> <span><%= country.area %>km <sup>2</sup></span></li>
-                                            <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
+                                            <li class="list-group-item"><strong>Currencies</strong> 
+                                                <span>
+                                                    <% (country.currencies).forEach ((currency) => { %>
+                                                        <%= currency.name %> (<%= currency.symbol %>)
+                                                    <% }) %>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item"><strong>Languages</strong> 
+                                                <span>
+                                                    <% (country.languages).forEach ((language) => { %>
+                                                        <%= language.name %>,
+                                                    <% }) %>
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item"><strong>Area</strong> <span><%= numberWithCommas(country.area) %> km<sup>2</sup></span></li>
+                                            <li class="list-group-item"><strong>Population</strong> <span><%= numberWithCommas(country.population) %></span></li>
                                             <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
                                         </ul>
                                         <!-- <div class="d-flex justify-content-between align-items-center">
