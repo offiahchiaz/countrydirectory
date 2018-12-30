@@ -13,29 +13,46 @@
     
     <% include ./partials/header %>
 
-    <div class="container">
-        <% if(data !== null){ %>
-            <div class="row">
-                <% data.forEach(function(country){ %>
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <img src="<%= country.flag %>" class="card-img-top"  alt="country flag">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Name</strong> <span><%= country.name %> (<%= country.alpha2Code %>)</span> </li>
-                                <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
-                                <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
-                                <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
-                                <li class="list-group-item"><a href="<%= country.name %>" class="btn btn-info">KNOW MORE</a></li>
-                            </ul>
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <% if(data !== null){ %>
+                <div class="row">
+                    <% data.forEach(function(country){ %>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img src="<%= country.flag %>" class="card-img-top"  alt="country flag">
+                            </div>
                         </div>
-                    </div>
-                <% }) %>
-            </div>
-        <% } %>    
-    
-        <% if(error !== null){ %>
-            <p><%= error %></p>
-        <% } %>
+                        <div class="col-md-8">
+                            <div class="card mb-8 shadow-sm">
+                                <!-- <img src="<%= country.flag %>" class="card-img-top"  alt="country flag"> -->
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><strong>Name</strong> <span><%= (country.name).substring(0, 20) %> (<%= country.alpha2Code %>)</span> </li>
+                                            <li class="list-group-item"><strong>Capital</strong> <span><%= country.capital %></span></li>
+                                            <li class="list-group-item"><strong>Citizen</strong> <span><%= country.demonym %></span></li>
+                                            <li class="list-group-item"><strong>Calling codes</strong> <span><%= country.callingCodes %></span></li>
+                                            <li class="list-group-item"><strong>Time zone</strong> <span><%= country.timezones %></span></li>
+                                            <li class="list-group-item"><strong>Currencies</strong> <span><%= country.currencies %></span></li>
+                                            <li class="list-group-item"><strong>Languages</strong> <span><%= country.languages %></span></li>
+                                            <li class="list-group-item"><strong>Area</strong> <span><%= country.area %>km <sup>2</sup></span></li>
+                                            <li class="list-group-item"><strong>Population</strong> <span><%= country.population %></span></li>
+                                            <li class="list-group-item"><strong>Region</strong> <span><%= country.region %></span></li>
+                                        </ul>
+                                        <!-- <div class="d-flex justify-content-between align-items-center">
+                                            <a href="<%= country.name %>" class="btn btn-sm btn-outline-secondary">KNOW MORE</a>
+                                        </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>    
+
+            <% if(error !== null){ %>
+                <p><%= error %></p>
+            <% } %>
+        </div>                      
     </div>
     
     <% include ./partials/footer %>
