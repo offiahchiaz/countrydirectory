@@ -1,3 +1,12 @@
+.navbar .dropdown-menu {
+background-color: #343a40;
+}
+
+/* and this styles the dropdwon trigger link, when open */
+.navbar .dropdown.show a { 
+background-color: #343a40;
+color: #fff;
+}
 .jumbotron {
     padding-top: 3rem;
     padding-bottom: 3rem;
