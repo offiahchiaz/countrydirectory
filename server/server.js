@@ -37,18 +37,18 @@ app.get('/:name', function (req, res) {
 });
 
 app.get('/:region', function (req, res) {
-    let regionName = req.params.region;
-    console.log(regionName)
-    let url = `https://restcountries.eu/rest/v2/region/${regionName}`;
+    let regionName = req.params.region; 
+    console.log(countryName)
+    let url = `https://restcountries.eu/rest/v2/region/${regionName}`
     request(url, function (err, response, body) {
         if (err) {
-            res.render('region', {data: null, error: 'Error, please try again'});
+            res.render('index', {data: null, error: 'Error, please try again'});
         } else {
             let data = JSON.parse(body);
-            res.render('region', {data: data, error: null}); 
+            res.render('index', {data: data, error: null}); 
         }
     });
-}); 
+});
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
